@@ -78,7 +78,7 @@ final class FontService {
 
         for char in sampleChars {
             let unicodeScalar = char.unicodeScalars.first!
-            if CFCharacterSetIsCharacterMember(characterSet, unicodeScalar.value) {
+            if CFCharacterSetIsCharacterMember(characterSet, UniChar(truncatingIfNeeded: unicodeScalar.value)) {
                 characters.append(char)
             }
         }
